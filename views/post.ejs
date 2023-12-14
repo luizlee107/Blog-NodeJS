@@ -1,0 +1,11 @@
+<h1><%= data.title %></h1>
+
+<span class="article-date"><%= data.createdAt.toDateString() %></span>
+<div class="image-container">
+    <img src="/uploads/<%= data.image %>" alt="<%= data.title %>">
+</div>
+
+<br>
+<br>
+<br>
+<article class="article"><%= data.body %></article>
