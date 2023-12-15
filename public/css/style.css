@@ -68,8 +68,8 @@ textarea {
   font-size: 1rem;
   display: block;
   box-sizing: border-box;
-  width: 71%;
-  margin: 0 auto;
+  width: auto;
+  margin: 0px 300px 20px; 
   padding: 0.7rem 0.75rem;
   margin-bottom: 1rem;
 }
@@ -80,8 +80,10 @@ textarea {
   color: white; 
   padding: 16px 32px;
   text-decoration: none;
-  margin: 0 auto; 
+  margin: 0px 300px 20px; 
   cursor: pointer;
+
+  
 
   
 
