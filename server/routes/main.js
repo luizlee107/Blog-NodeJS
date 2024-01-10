@@ -3,7 +3,8 @@ const router = express.Router();
 const Post = require('../models/Post');
 const Message = require('../models/Message');
 const mainLayout = '../views/layouts/main';
-
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 router.get('', async (req, res) => {
   try {
@@ -161,21 +162,22 @@ router.get('/contact', async (req, res) => {
     console.log(error);
   }
 
-});
-router.post('/contact', async (req, res) => {
+});router.post('/contact', async (req, res) => {
+  
   try {
+    const { name, email, body } = req.body;
+
     const newMessage = new Message({
-      name: req.body.name,
-      email: req.body.email,
-      body: req.body.body,
+      name,
+      email,
+      body,
     });
 
-    await newMessage.save(); // Save the newMessage to the database
-
+    await newMessage.save();
     res.redirect('/contact');
   } catch (error) {
-    console.log(error);
-    // Handle the error appropriately, maybe send an error response to the client
+    console.error(error);
+    // Handle the error appropriately, e.g., send an error response
     res.status(500).send('Internal Server Error');
   }
 });

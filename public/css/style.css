@@ -432,9 +432,18 @@ img {
   color: var(--black);
 }
 
-
 .image-contact {
-  display: flex;
+  text-align: center; /* Optional: Centers the images */
+}
+
+.image-contact a {
+  display: inline-block;
+  margin-right: 50px; /* Adjust the spacing between images */
+}
+
+/* Optional: If you want to remove the bottom margin for the last image */
+.image-contact a:last-child {
+  margin-right: 0;
 }
 
 .contact-img {
